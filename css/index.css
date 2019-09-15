@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+    background:white;
+  }
+
+  /*--- navigation bar ---*/
+  .navbar {
+    background:rgb(30, 150, 125)
+  }
+  .nav-link,
+  .navbar-brand {
+    color: #fff;
+    cursor: pointer;
+  }
+  .nav-link {
+    margin-right: 1em !important;
+  }
+  .nav-link:hover {
+    color: rgb(250, 250, 200);
+    font: bold
+  }
