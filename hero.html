@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--frameworks-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <!--script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <!--basics-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Title-->
+    <title>Foodhero</title>
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md">
+        <a class="logo" href="./index.html"> Foodhero </a>
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Logout</a>
+                </li>
+            </ul>
+        </div>   
+    </nav>
+                  
+
+    <!--HTML BODY-->
+    <div class="container">
+        <div class="row">
+        <!--ERR centering issue-->
+        <h1 class="title">Foodhero</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container" id=heroStuff>
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-primary btn-block col-sm-12">Search Now</button>
+                <!--Donor-->
+                <hr>
+                <span class=h5>Donor Location: </span>
+                <span class=h5 id=locationDonor>123 Sample Address</span>
+                <br><hr>
+                <!--Receipiant-->
+                <span class=h5>Receipiant Location: </span>
+                <span class=h5 id=locationReceip>456 Sample Address</span>
+                <br>
+                <hr>
+                <!--Item-->
+                <span class=h5>Delivery Details: </span>
+                <br>
+                <span class=h6>Item Description: </span>
+                <span class=h6 id=deliveryItem>Meat</span>
+                <br>
+                <span class=h6>Weight: </span>
+                <span class=h6 id=deliveryItem>Light</span>
+                <br>
+                <span class=h6>Size: </span>
+                <span class=h6 id=deliveryItem>Small</span>
+                <br>
+                <!--Google Maps-->
+                <div class="map" id=googleMaps></div>
+                <!--Accep or Decline-->
+                <button type="submit" class="btn btn-primary col-sm-5">Accept</button>
+                <button type="submit" class="btn btn-primary col-sm-5">Decline</button>          
+            </div>
+        </div>
+    </div>
+</body>
+</html>
