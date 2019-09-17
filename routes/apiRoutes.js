@@ -2,11 +2,11 @@ var db = require("../models");
 
 module.exports = function(app) {
   // 
-  app.get("/api/example", function(req, res) {
-    db.foodherodb.findAll({}).then(function(dbfoodherodb) {
-      res.json(foodherodb);
-    });
-  });
+  // app.get("/api/example", function(req, res) {
+  //   db.foodherodb.findAll({}).then(function(dbfoodherodb) {
+  //     res.json(foodherodb);
+  //   });
+  // });
 
   // Create a new registration for each :type
   app.post("/api/register/:type", function(req, res) {
@@ -40,6 +40,127 @@ module.exports = function(app) {
       
     });
   });
+// FROM HERE ON IN I AM OPEN TO SUGGESTIONS!!!!
+  //location request - html5 and opens map to that location
+
+  app.post("/api/location", function(req, res) {   
+
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var heropos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        console.log(heropos);
+        infoWindow.setPosition(heropos);
+        infoWindow.setContent('Location found.');
+        infoWindow.open(map);
+        map.setCenter(heropos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  
+
+  function handleLocationError(browserHasGeolocation, infoWindow, heropos) {
+    infoWindow.setPosition(heropos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  }
+  });
+    
+
+//This Opens a map and can plot a route between points and is tailored to parse out the distance between the points
+//this could be used to compare distances. 
+
+      var directionsService;
+      var directionsDisplay;
+      //initMap is the function that builds the map - NOTE: Previously we had to include 
+      //this code  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"async defer></script>
+      //on the html page that the map was loading. I would imagine we'll need to do this for the mission page.
+      function initMap() {
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: { lat: 43.6629, lng: -79.3957 }
+        });
+        directionsDisplay.setMap(map);
+        
+      }
+      var herolocation = heropos // get from html5 function
+      var donorlocation //get from database
+      //This is where we can do the hero to donor locate and distance
+      //Ideally I'd like to add a waypoint here and just do one request with herolocation, donorlocation and reciplocation
+      //to minimize the coding. I haven't been able to figure out how to include the waypoints properly and
+      //still researching. 
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route(
+          {
+            origin: document.getElementById(herolocation).value,
+            destination: document.getElementById(donorlocation).value,
+            travelMode: "DRIVING"
+          },
+          function(response, status) {
+            console.log(response);
+            if (status === "OK") {
+              directionsDisplay.setDirections(response);
+              var distance = response.routes[0].legs[0].distance.value;
+              console.log(distance/ 1000);
+              //$("#tripdistance").val(distance / 1000);
+            } else {
+              window.alert("Directions request failed due to " + status);
+            }
+
+      //This would be a similar function to get the donor to recipient distance
+
+      //This is where we can do the hero to donor locate and distance
+      var donorlocation //get from database
+      var reciplocation //get from database
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        directionsService.route(
+
+
+          {
+            origin: document.getElementById(donorlocation).value,
+            destination: document.getElementById(reciplocation).value,
+            travelMode: "DRIVING"
+          },
+          function(response, status) {
+            console.log(response);
+            if (status === "OK") {
+              directionsDisplay.setDirections(response);
+              var distance = response.routes[0].legs[0].distance.value;
+              console.log(distance/ 1000);
+              //$("#tripdistance").val(distance / 1000);
+            } else {
+              window.alert("Directions request failed due to " + status);
+            }
+
+
+
+
+      //HTML5 geolocation.
+      
+
+  //Waypoints directions request example
+
+  https://maps.googleapis.com/maps/api/directions/json?
+origin=Boston,MA&destination=Concord,MA
+&waypoints=Charlestown,MA|Lexington,MA
+&key=YOUR_API_KEY 
+
+//limits search paramter to canada
+&region=ca
+
+//limits to walking directions
 
   // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
