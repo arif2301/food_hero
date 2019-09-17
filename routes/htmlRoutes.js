@@ -12,7 +12,7 @@ module.exports = function(app) {
   //main page - for log 
   //registration page for all
   app.get("/registration", function(req, res) {
-    res.sendFile(path.join(__dirname, "../registration.html"));
+    res.sendFile(path.join(__dirname, "../index.html"));
   });
   
   //page to enter donation - for donor
@@ -27,12 +27,12 @@ module.exports = function(app) {
   
   //mission offer page - accept or decline - for food hero
   app.get("/foodhero/offer", function(req, res) {
-    res.sendFile(path.join(__dirname, "../foodhero.html"));
+    res.sendFile(path.join(__dirname, "../hero.html"));
   });
 
   //mission page, it will show route and have buttons to click when pickup and the dropoff-food hero 
   app.get("/foodhero/mission", function(req, res) {
-    res.sendFile(path.join(__dirname, "../mission .html"));
+    res.sendFile(path.join(__dirname, "../mission.html"));
   });
 
   // Render 404 page for any unmatched routes
