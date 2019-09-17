@@ -40,10 +40,13 @@ module.exports = function(app) {
       
     });
   });
-// FROM HERE ON IN I AM OPEN TO SUGGESTIONS!!!!
-  //location request - html5 and opens map to that location
+
+ //LOCATION API ROUTE. Not sure if we should be doing all of this in one route or multiple!
 
   app.post("/api/location", function(req, res) {   
+
+     //location request - html5 and opens map to that location. This could be tinkered to just grab 
+     //the location and not publish the map until we have the herolocation, donorlocation, and recipient location
 
     
     if (navigator.geolocation) {
@@ -147,7 +150,7 @@ module.exports = function(app) {
 
 
 
-      //HTML5 geolocation.
+   
       
 
   //Waypoints directions request example
