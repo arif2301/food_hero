@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "",
     "database": "foodherodb",
     "host": "localhost",
     "dialect": "mysql"
