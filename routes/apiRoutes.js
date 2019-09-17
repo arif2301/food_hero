@@ -1,6 +1,6 @@
 var db = require("../models");
 
-module.exports = function(app) {
+
 
   // 
   // app.get("/api/example", function(req, res) {
@@ -184,7 +184,9 @@ module.exports = function(app) {
             } else {
               window.alert("Directions request failed due to " + status);
             }
+  }
 
+//};
 
 
 
@@ -193,13 +195,13 @@ module.exports = function(app) {
 
   //Waypoints directions request example
 
-  https://maps.googleapis.com/maps/api/directions/json?
-origin=Boston,MA&destination=Concord,MA
-&waypoints=Charlestown,MA|Lexington,MA
-&key=YOUR_API_KEY 
+//   https://maps.googleapis.com/maps/api/directions/json?
+// origin=Boston,MA&destination=Concord,MA
+// &waypoints=Charlestown,MA|Lexington,MA
+// &key=YOUR_API_KEY 
 
-//limits search paramter to canada
-&region=ca
+// //limits search paramter to canada
+// &region=ca
 
 //limits to walking directions
 
@@ -210,7 +212,5 @@ origin=Boston,MA&destination=Concord,MA
   //   ) {
   //     res.json(dbExample);
   //   });
-  }
-=======
-};
+
 
