@@ -8,6 +8,11 @@ var sequelize = require("../config/connection.js");
 var Inventory = sequelize.define(
   "inventory",
   {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     item: Sequelize.STRING,
     amount: Sequelize.INTEGER,
     description: Sequelize.STRING
