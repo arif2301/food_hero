@@ -1,4 +1,4 @@
-//Request Permission//
+//Request Permission//main.js/client
 Notification.requestPermission(function(status) {
     console.log('Notification permission status:', status);
 });
@@ -6,14 +6,14 @@ Notification.requestPermission(function(status) {
 
 // TO DO: Get event handler (when food is listed, should trigger this function)
 
-// Notifications API: Function configures notification options and actions
+// main.js Notifications API: Function configures notification options and actions/client
 function displayNotification() {
     if (Notification.permission == 'granted') {
       navigator.serviceWorker.getRegistration().then(function(reg) {
         var options = {
           title: "New Mission", 
-          body: 'Show what the pick up/drop off details', /* How do I get location data to display? or do we link them to another page */
-          icon: 'images/example.png',
+          body: 'Show what the pick up/drop off details are', /* How do I get location data to display? or do we link them to another page */
+          icon: 'images/superhero.png',
           vibrate: [100, 50, 100],
           data: {
             dateOfArrival: Date.now(),
@@ -23,39 +23,29 @@ function displayNotification() {
             {action: 'explore', title: 'Accept',
               icon: 'images/checkmark.png'},
             {action: 'close', title: 'Not this time',
-              icon: 'images/xmark.png'},
+              icon: 'images/xmark.jpg'},
           ]
         };
-        reg.showNotification('Food Hero', options);
+        reg.showNotification('Hello, Food Hero!', options);
       });
     }
   }
 
   // TO DO: when accept clicked by food hero - should trigger following function to two different users
 
-  //continual check for permissions
 
-  if (Notification.permission === "granted") {
-    
-  } else if (Notification.permission === "blocked") {
-   //the user has previously denied push. Can't reprompt/
-  } else {
-    // show a prompt to the user //
-  }
-
-
-// Interactions API: service worker
-
-
-self.addEventListener('notificationclose', function(e) {
+//Close notification event listener//serviceworker.js
+  self.addEventListener('notificationclose', function(e) {
     var notification = e.notification;
     var primaryKey = notification.data.primaryKey;
   
     console.log('Closed notification: ' + primaryKey);
   });
-  
 
-  self.addEventListener('notificationclick', function(e) {
+
+//notification click event/serviceworker.js
+
+self.addEventListener('notificationclick', function(e) {
     var notification = e.notification;
     var primaryKey = notification.data.primaryKey;
     var action = e.action;
@@ -68,12 +58,42 @@ self.addEventListener('notificationclose', function(e) {
     }
   });
 
+  //continual check for permissions
+
+  if (Notification.permission === "granted") {
+    
+  } else if (Notification.permission === "blocked") {
+   //the user has previously denied push. Can't reprompt/
+  } else {
+    // show a prompt to the user... this also could be where text integration //
+  }
+
+
 
   //push api
+    //service worker//what makes this different??? than the display
 
-
-
-
+  self.addEventListener('push', function(e) {
+    var options = {
+      title: "New Mission",
+      body: 'Show what the pick up/drop off details are',
+      icon: 'images/superhero.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: '2'
+      },
+      actions: [
+        {action: 'explore', title: 'Accept',
+          icon: 'images/checkmark.png'},
+        {action: 'close', title: 'Not this time',
+          icon: 'images/xmark.png'},
+      ]
+    };
+    e.waitUntil(
+      self.registration.showNotification('Hello Food Hero!', options)
+    );
+  });
 
   //node
 var webPush = require('web-push');
