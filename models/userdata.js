@@ -3,17 +3,16 @@
 // Sequelize (capital) references the standard library
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
-var sequelize = require("../config/connection.js");
+//var sequelize = require("../config/connection.js");
 // Creates a "Inventory" model that matches up with DB
 module.exports = function(sequelize, DataTypes) {
-  var UserData = sequelize.define(
-    "UserData",
+  var UserData = sequelize.define("UserData",
     {
-      id: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        primaryKey: true
-      },
+      // id: {
+      //   type: Sequelize.INTEGER,
+      //   autoIncrement: true,
+      //   primaryKey: true
+      // },
       type: Sequelize.STRING, //donor, recipient or delivery
       name: Sequelize.STRING,
       email: Sequelize.STRING,
@@ -25,13 +24,14 @@ module.exports = function(sequelize, DataTypes) {
       postalCode: Sequelize.STRING,
       longitude: Sequelize.INTEGER,
       latitude: Sequelize.INTEGER
-    },
-    {
-      timestamps: false
     }
+    // {
+    //   timestamps: false
+    // }
   );
-}
+  return UserData;
+};
 // Syncs with DB
-UserData.sync();
+//UserData.sync();
 // Makes the Inventory Model available for other files (will also create a table)
 // module.exports = UserData;
