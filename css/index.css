@@ -1,4 +1,4 @@
-  body {
+body {
     padding: 0;
     margin: 0;
     background:white;
@@ -12,7 +12,7 @@
   .navbar {
     background:rgb(30, 150, 125)
   }
-  
+
   .logo {
     color: white;
     cursor: pointer;
@@ -33,4 +33,17 @@
   .nav-link:hover {
     color: rgb(250, 250, 200);
     font: bold;
+  }
+
+  .nav-link,
+  .navbar-brand {
+    color: #fff;
+    cursor: pointer;
+  }
+  .nav-link {
+    margin-right: 1em !important;
+  }
+  .nav-link:hover {
+    color: rgb(250, 250, 200);
+    font: bold
   }

@@ -1,0 +1,19 @@
+notes for Simon:
+please move all HMTL to public folder
+
+*for registration
+user type :
+can we change to
+value="1" instead Recipient
+value="2" instead Donor 
+value="3" instead  Hero 
+
+- please add id="type" in input type for USERtype 
+- for province change id to province from city
+- before the body ends, please also add,
+<script src="js/newUser.js" type="text/javascript"></script>
+
+*for donation
+
+- before the body ends, please also add,
+<script src="js/newDonor.js" type="text/javascript"></script>
