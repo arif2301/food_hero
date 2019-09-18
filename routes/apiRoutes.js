@@ -1,6 +1,6 @@
-var db = require("../models");
+/* var db = require("../models");
 
-module.exports = function(app) {
+
 
   // 
   // app.get("/api/example", function(req, res) {
@@ -83,6 +83,7 @@ module.exports = function(app) {
 
  //These bring back all info. of the donors and recipients
 
+
   app.get("/api/donor", function(req, res) {
 db.registration.getAll({where: {type: "donor"}}).then(function(donors){
 res.json(donors);
@@ -96,6 +97,16 @@ app.get("/api/recipients", function(req,res) {
 });
 }
      
+
+
+//};
+
+
+
+   
+      
+
+
 
 
   // Delete an example by id
