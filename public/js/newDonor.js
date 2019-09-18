@@ -1,17 +1,14 @@
 // When user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
-  // Make a newdonor object
+  // Make a newBook object
   var newdonor = {
     item: $("#item")
       .val()
       .trim(),
-    weight: $("#weight")
+    amount: $("#amount")
       .val()
       .trim(),
-      size: $("#size")
-      .val()
-      .trim(),  
     description: $("#description")
       .val()
       .trim()
