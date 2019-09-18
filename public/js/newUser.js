@@ -15,10 +15,10 @@ $("#add-btn").on("click", function(event) {
     password: $("#password")
       .val()
       .trim(),
-    streetAddress1: $("#streetAdress")
+    streetAddress1: $("#streetAddress1")
       .val()
       .trim(),
-    streetAddress2: $("#detailAdress")
+    streetAddress2: $("#streetAddress2")
       .val()
       .trim(),
     city: $("#city")
@@ -32,13 +32,25 @@ $("#add-btn").on("click", function(event) {
       .trim()
   };
 
+  
   // Send an AJAX POST-request with jQuery
   $.post("/api/new/user", newuser)
     // On success, run the following code
     .then(function(data) {
       // Log the data we found
-      console.log(data);
+      console.log(data);  
     });
+
+  // direct user to the correct webpage based on user type  
+  if (newuser.type=="Recipient") {
+    location.href = "recipient.html";
+  }  
+  else if (newuser.type=="Donor") {
+    location.href = "donor.html";
+  }
+  else {
+    location.href = "hero.html";
+  }
 
   // Empty each input box by replacing the value with an empty string
   $("#type").val("");
