@@ -61,7 +61,8 @@ module.exports = function(app) {
     console.log(req.body);
     db.Inventory.create({
       item: req.body.item,
-      amount: req.body.amount,
+      size: req.body.size,
+      weight: req.body.weight,
       description: req.body.description
     }).then(function(results) {
       res.json(results);
