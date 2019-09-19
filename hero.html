@@ -18,7 +18,7 @@
 </head>
 <body>
     <!--Navigation-->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar">
         <a class="logo" href="./index.html"> Foodhero </a>
         <div>
             <ul class="navbar-nav">
@@ -41,16 +41,16 @@
 
     <div class="container" id=heroStuff>
         <div class="row">
-            <div class="col-sm-6">
-                <button type="submit" class="btn btn-primary btn-block col-sm-12">Search Now</button>
+            <div class="col-sm-5">
+                <button type="submit" class="btn btn-primary btn-block col-sm-10 hero-search">Search Now</button>
                 <!--Donor-->
                 <hr>
                 <span class=h5>Donor Location: </span>
-                <span class=h5 id=locationDonor>123 Sample Address</span>
-                <br><hr>
+                <span class=h5 id=locationDonor>257 Dundas St W, Toronto, ON</span>
+                <br>
                 <!--Receipiant-->
                 <span class=h5>Receipiant Location: </span>
-                <span class=h5 id=locationReceip>456 Sample Address</span>
+                <span class=h5 id=locationReceip>55 St George St, Toronto, ON</span>
                 <br>
                 <hr>
                 <!--Item-->
@@ -73,53 +73,6 @@
             </div>
         </div>
     </div>
-
-        <style>
-            #right-panel {
-                font-family: 'Roboto','sans-serif';
-                line-height: 30px;
-                padding-left: 10px;
-            }
-        ​
-            #right-panel select, #right-panel input {
-                font-size: 15px;
-            }
-        ​
-            #right-panel select {
-                width: 100%;
-            }
-        ​
-            #right-panel i {
-                font-size: 12px;
-            }
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-            #map {
-                height: 100%;
-                float: left;
-                width: 70%;
-                height: 100%;
-            }
-            #right-panel {
-                margin: 20px;
-                border-width: 2px;
-                width: 20%;
-                height: 400px;
-                float: left;
-                text-align: left;
-                padding-top: 0;
-            }
-            #directions-panel {
-                margin-top: 10px;
-                background-color: #FFEE77;
-                padding: 10px;
-                overflow: scroll;
-                height: 174px;
-            }
-            </style>
                 <div id="map"></div>
                 <div id="right-panel">
                 <!-- We don't need this dropdown design - I am keeping it here to facilitate testing until I can figure out getting the html5 and donor and recip coords from our database -->
