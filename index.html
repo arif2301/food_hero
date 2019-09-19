@@ -13,6 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <!--Fonts-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico&display=swap" rel="stylesheet">
         
@@ -138,7 +139,7 @@
             <div class="form-group">
                 <div class="col-sm-12 col-sm-offset-3">
                     <span class="help-block">*Required fields</span>
-                    <button type="submit" class="btn btn-primary btn-block col-sm-12">Register</button>
+                    <button type="submit" id="register" class="btn btn-primary btn-block col-sm-12">Register</button>
                     <br>
                 </div>
             </div>
@@ -147,6 +148,12 @@
         </form> <!-- /form -->
     </div> <!-- ./container --> 
     <script>
+        $(document).ready(function(){
+
+            $("#register").on('click',function() {
+
+
+
     var userData = {
         type: $("#userType").val(),
         name: $("#name").val(),
@@ -162,7 +169,8 @@
 
       // AJAX post the data to the friends API.
       $.post("/api/new/user", userData);
-
+    });
+});
     </script>
 </body>
 </html>
