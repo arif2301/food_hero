@@ -1,7 +1,6 @@
 // When user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
-  // Make a newBook object
   var newuser = {
     type: $("#type")
       .val()
@@ -32,23 +31,20 @@ $("#add-btn").on("click", function(event) {
       .trim()
   };
 
-  
   // Send an AJAX POST-request with jQuery
   $.post("/api/new/user", newuser)
     // On success, run the following code
     .then(function(data) {
       // Log the data we found
-      console.log(data);  
+      console.log(data);
     });
 
-  // direct user to the correct webpage based on user type  
-  if (newuser.type=="Recipient") {
-    location.href = "recipient.html";
-  }  
-  else if (newuser.type=="Donor") {
+  // direct user to the correct webpage based on user type
+  if (newuser.type === "Recipient") {
+    location.href = "../../recipient.html";
+  } else if (newuser.type === "Donor") {
     location.href = "donor.html";
-  }
-  else {
+  } else {
     location.href = "hero.html";
   }
 

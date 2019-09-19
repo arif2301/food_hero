@@ -5,8 +5,10 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
 //var sequelize = require("../config/connection.js");
 // Creates a "Inventory" model that matches up with DB
-module.exports = function(sequelize, DataTypes) {
-  var UserData = sequelize.define("UserData",
+//module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize) {
+  var UserData = sequelize.define(
+    "UserData",
     {
       // id: {
       //   type: Sequelize.INTEGER,
@@ -29,6 +31,7 @@ module.exports = function(sequelize, DataTypes) {
     //   timestamps: false
     // }
   );
+  //UserData.sync();
   return UserData;
 };
 // Syncs with DB

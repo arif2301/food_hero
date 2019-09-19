@@ -9,9 +9,9 @@ $("#add-btn").on("click", function(event) {
     weight: $("#weight")
       .val()
       .trim(),
-      size: $("#size")
+    size: $("#size")
       .val()
-      .trim(),  
+      .trim(),
     description: $("#description")
       .val()
       .trim()
