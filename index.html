@@ -110,7 +110,8 @@
             <div class="form-group">
                 <label for="street adress" class="col-sm-12 control-label">Street Address*</label>
                 <div class="col-sm-12">
-                    <input type="text" id="streetAddress1" placeholder="Street Address" class="form-control">
+                        <input type="integer" id="streetNumber" placeholder="Street Number" class="form-control">
+                    <input type="text" id="streetName" placeholder="Street Name" class="form-control">
                     <input type="text" id="streetAddress2" placeholder="Apartment, Unit, Building etc." class="form-control">
                 </div>
             </div>
@@ -145,5 +146,23 @@
 
         </form> <!-- /form -->
     </div> <!-- ./container --> 
+    <script>
+    var userData = {
+        type: $("#userType").val(),
+        name: $("#name").val(),
+      email: $("#email").val(),
+      password: $("#password").val(),
+      streetNumber: $("#streetNumber").val(),
+      streetName: $("#streetName").val(),
+      streetAddress2: $("#streetAddress2").val(),
+      city: $("#city").val(),
+      province: $("province").val(),
+      postalCode: $("#postalCode").val(),
+        };
+
+      // AJAX post the data to the friends API.
+      $.post("/api/new/user", userData);
+
+    </script>
 </body>
 </html>

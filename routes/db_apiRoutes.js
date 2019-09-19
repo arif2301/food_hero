@@ -43,13 +43,12 @@ module.exports = function(app) {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      streetAddress1: req.body.streetAddress1,
+      streetNumber: req.body.streetNumber,
+      streetName: req.body.streetName,
       streetAddress2: req.body.streetAddress2,
       city: req.body.city,
       province: req.body.province,
-      postalCode: req.body.postalCode,
-      longitude: req.body.longitude,
-      latitude: req.body.latitude
+      postalCode: req.body.postalCode
     }).then(function(results) {
       res.json(results);
     });
