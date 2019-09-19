@@ -10,51 +10,116 @@ h1 {
 
 /*--- navigation bar ---*/
 .navbar {
-  background:rgb(30, 150, 125)
+  background:white
 }
 
 .logo {
-  color: white;
   cursor: pointer;
   font-family: "Pacifico", Times, serif;
+  font-size: 36px;
+  float: left;
+  color: rgb(30, 150, 125);
+  cursor: pointer;
 }
 
 .logo:hover {
-  color:  white;
-  font: bold;
+  color:  rgb(20, 99, 80);
+  text-decoration: none;
 }
 
-.nav-link {
-  color: white;
-  text-align:right;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.nav-link:hover {
-  color: white;
-}
-
-.nav-link,
-.navbar-brand {
-  color: #fff;
-  cursor: pointer;
-}
 .nav-link {
   margin-right: 1em !important;
-}
-.nav-link:hover {
-  color: rgb(250, 250, 200);
-  font: bold
-}
-  
-.logo-fh {
-  color: white;
-  font-family: 'Pacifico', Arial, Helvetica, sans-serif;
-  font-size: 26px;
+  cursor: pointer;
+  color: rgb(30, 150, 125);
+  text-align:right;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px
 }
 
-.logo-fh:hover {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.link:hover {
+  color: rgb(20, 99, 80);
+}
+
+/* .index body */
+.info-saved {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  font-size: 80px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  font-size: 80px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.index-box {
+  border-style: solid;
+  border-color: rgb(30, 150, 125);
+}
+
+.btn-primary {
+  background-color: rgb(30, 150, 125);
+}
+
+
+#right-panel {
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+​
+#right-panel select, #right-panel input {
+  font-size: 15px;
+}
+​
+#right-panel select {
+  width: 100%;
+}
+​
+#right-panel i {
+  font-size: 12px;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 100%;
+  float: left;
+  width: 70%;
+  height: 100%;
+  margin: 20px
+}
+#right-panel {
+  margin: 20px;
+  border-width: 2px;
+  width: 20%;
+  height: 400px;
+  float: left;
+  text-align: left;
+  padding-top: 0;
+}
+#directions-panel {
+  margin-top: 10px;
+  background-color: #FFEE77;
+  padding: 10px;
+  overflow: scroll;
+  height: 174px;
+}
+
+/* hero */
+
+.hero-search {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
