@@ -16,7 +16,7 @@ var UserData = sequelize.define(
     type: Sequelize.STRING, //donor, recipient or delivery
     name: Sequelize.STRING,
     email: Sequelize.STRING,
-    phonenumber: Sequelize.INTERGER,
+    phoneNumber: Sequelize.INTERGER,
     password: Sequelize.STRING,
     streetAddress1: Sequelize.STRING,
     streetAddress2: Sequelize.STRING,
