@@ -17,13 +17,12 @@ module.exports = function(sequelize, DataTypes) {
       name: Sequelize.STRING,
       email: Sequelize.STRING,
       password: Sequelize.STRING,
-      streetAddress1: Sequelize.STRING,
+      streetNumber: Sequelize.INTEGER,
+      streetName: Sequelize.STRING,
       streetAddress2: Sequelize.STRING,
       city: Sequelize.STRING,
       province: Sequelize.STRING,
       postalCode: Sequelize.STRING,
-      longitude: Sequelize.INTEGER,
-      latitude: Sequelize.INTEGER
     }
     // {
     //   timestamps: false
